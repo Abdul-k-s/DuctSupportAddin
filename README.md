@@ -111,7 +111,7 @@ dotnet build -c Release
 
 ## Demo Video
 
-[Watch demo video](https://youtu.be/gCSaFxQd_FA)
+[![Watch Demo](https://img.youtube.com/vi/gCSafxQd_FA/0.jpg)](https://www.youtube.com/watch?v=gCSafxQd_FA)
 
 ## Support Families
 
