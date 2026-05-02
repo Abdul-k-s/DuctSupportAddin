@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter</value>
+  </resheader>
+  
+  <!-- Window Titles -->
+  <data name="WindowTitle" xml:space="preserve">
+    <value>تركيب دعامات المجاري</value>
+  </data>
+  <data name="PreviewWindowTitle" xml:space="preserve">
+    <value>معاينة الدعامات</value>
+  </data>
+  
+  <!-- Section Headers -->
+  <data name="ScopeHeader" xml:space="preserve">
+    <value>النطاق</value>
+  </data>
+  <data name="SpacingHeader" xml:space="preserve">
+    <value>معيار التباعد</value>
+  </data>
+  <data name="SupportTypesHeader" xml:space="preserve">
+    <value>أنواع الدعم</value>
+  </data>
+  <data name="FamiliesHeader" xml:space="preserve">
+    <value>العائلات</value>
+  </data>
+  <data name="CalculationsHeader" xml:space="preserve">
+    <value>الحسابات</value>
+  </data>
+  <data name="ExportHeader" xml:space="preserve">
+    <value>التصدير</value>
+  </data>
+  <data name="SettingsHeader" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  
+  <!-- Scope -->
+  <data name="EntireModel" xml:space="preserve">
+    <value>النموذج بالكامل</value>
+  </data>
+  <data name="ActiveView" xml:space="preserve">
+    <value>العرض النشط</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>التحديد</value>
+  </data>
+  <data name="Systems" xml:space="preserve">
+    <value>الأنظمة:</value>
+  </data>
+  <data name="Supply" xml:space="preserve">
+    <value>إمداد</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>راجع</value>
+  </data>
+  <data name="Exhaust" xml:space="preserve">
+    <value>عادم</value>
+  </data>
+  <data name="SkipExisting" xml:space="preserve">
+    <value>تخطي المجاري ذات الدعامات الموجودة</value>
+  </data>
+  <data name="ConsiderInsulation" xml:space="preserve">
+    <value>مراعاة سماكة العزل</value>
+  </data>
+  
+  <!-- Spacing -->
+  <data name="Standard" xml:space="preserve">
+    <value>المعيار:</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>التعديل (%):</value>
+  </data>
+  <data name="ActualSpacing" xml:space="preserve">
+    <value>التباعد الفعلي:</value>
+  </data>
+  
+  <!-- Support Types -->
+  <data name="HorizontalSupports" xml:space="preserve">
+    <value>دعامات المجاري الأفقية</value>
+  </data>
+  <data name="VerticalSupports" xml:space="preserve">
+    <value>دعامات المجاري العمودية</value>
+  </data>
+  <data name="PreferWallSupports" xml:space="preserve">
+    <value>تفضيل دعامات الجدار عند القرب من الجدار</value>
+  </data>
+  <data name="WallProximity" xml:space="preserve">
+    <value>القرب من الجدار:</value>
+  </data>
+  <data name="AlignWithStructure" xml:space="preserve">
+    <value>محاذاة الدعامات مع الهيكل (الكمرات)</value>
+  </data>
+  
+  <!-- Families -->
+  <data name="Ceiling" xml:space="preserve">
+    <value>السقف:</value>
+  </data>
+  <data name="Ground" xml:space="preserve">
+    <value>الأرضية:</value>
+  </data>
+  <data name="Wall" xml:space="preserve">
+    <value>الجدار:</value>
+  </data>
+  <data name="Vertical" xml:space="preserve">
+    <value>عمودي:</value>
+  </data>
+  
+  <!-- Calculations -->
+  <data name="CalculateLoads" xml:space="preserve">
+    <value>حساب الأحمال الإنشائية</value>
+  </data>
+  <data name="RecommendRods" xml:space="preserve">
+    <value>اقتراح أقطار القضبان</value>
+  </data>
+  <data name="InsulationType" xml:space="preserve">
+    <value>نوع العزل:</value>
+  </data>
+  
+  <!-- Export -->
+  <data name="ExportExcel" xml:space="preserve">
+    <value>جدول Excel (.xlsx)</value>
+  </data>
+  <data name="ExportPdf" xml:space="preserve">
+    <value>تقرير PDF ملخص</value>
+  </data>
+  <data name="TagSupports" xml:space="preserve">
+    <value>ترقيم الدعامات المركبة</value>
+  </data>
+  <data name="OutputFolder" xml:space="preserve">
+    <value>مجلد الإخراج:</value>
+  </data>
+  
+  <!-- Settings -->
+  <data name="Theme" xml:space="preserve">
+    <value>المظهر:</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>اللغة:</value>
+  </data>
+  
+  <!-- Buttons -->
+  <data name="Preview" xml:space="preserve">
+    <value>معاينة</value>
+  </data>
+  <data name="PlaceSupports" xml:space="preserve">
+    <value>تركيب الدعامات</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>تصفح</value>
+  </data>
+  
+  <!-- Tooltips -->
+  <data name="SpacingTooltipTitle" xml:space="preserve">
+    <value>تعديل التباعد</value>
+  </data>
+  <data name="SpacingTooltipContent" xml:space="preserve">
+    <value>أدخل نسبة مئوية لتعديل تباعد SMACNA. 100 = التباعد القياسي، 50 = نصف التباعد (دعامات أكثر)، 200 = ضعف التباعد (دعامات أقل)</value>
+  </data>
+  <data name="WallProximityTooltipTitle" xml:space="preserve">
+    <value>مسافة القرب من الجدار</value>
+  </data>
+  <data name="WallProximityTooltipContent" xml:space="preserve">
+    <value>المجاري ضمن هذه المسافة من الجدار ستستخدم دعامات مثبتة على الجدار بدلاً من دعامات السقف/الأرضية.</value>
+  </data>
+  
+  <!-- Messages -->
+  <data name="PlacementComplete" xml:space="preserve">
+    <value>اكتمل التركيب</value>
+  </data>
+  <data name="NoSupportsPlaced" xml:space="preserve">
+    <value>لم يتم تركيب أي دعامات. تحقق من وجود مجاري وأن الإعدادات صحيحة.</value>
+  </data>
+  
+</root>

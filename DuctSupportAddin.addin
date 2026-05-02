@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>RectangularDuctSupport</Name>
+    <Assembly>RectangularDuctSupport\RectangularDuctSupport.dll</Assembly>
+    <FullClassName>DuctSupportAddin.App</FullClassName>
+    <ClientId>7A3F8B2E-4C1D-4E5F-9A8B-6C7D8E9F0A1B</ClientId>
+    <VendorId>AUS</VendorId>
+    <VendorDescription>AUS - abdul.khaled.sultan@gmail.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

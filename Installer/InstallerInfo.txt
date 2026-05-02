@@ -1,0 +1,30 @@
+AUS Duct Support Add-in for Revit 2025
+=======================================
+
+This installer will set up the Duct Support Add-in for Autodesk Revit 2025.
+
+FEATURES:
+- Automatic duct support placement based on SMACNA and international standards
+- Intelligent ceiling, beam, floor, and wall host detection
+- Support for horizontal and vertical ducts
+- Structural load calculations and rod sizing
+- Insulation thickness consideration
+- Clash detection before placement
+- Excel and PDF reporting
+- Dark mode and Arabic language support
+
+REQUIREMENTS:
+- Autodesk Revit 2025
+- Windows 10/11 (64-bit)
+
+INSTALLATION:
+The add-in will be installed to:
+%APPDATA%\Autodesk\Revit\Addins\2025\DuctSupportAddin\
+
+After installation, restart Revit 2025 and find the add-in under:
+AUS MEP tab > Duct Supports panel
+
+SUPPORT:
+Email: abdul.khaled.sultan@gmail.com
+
+© 2024 AUS. All rights reserved.

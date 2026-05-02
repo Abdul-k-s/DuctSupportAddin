@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DuctSupportAddin</RootNamespace>
+    <AssemblyName>RectangularDuctSupport</AssemblyName>
+    <Version>1.0.0</Version>
+    <Company>AUS</Company>
+    <Authors>AUS</Authors>
+    <Description>Automatic rectangular duct support placement for Revit 2025 based on SMACNA and international standards</Description>
+    <Copyright>Copyright © AUS 2024</Copyright>
+    
+    <!-- Output path configuration -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+
+  <!-- Debug: Output to Revit addins folder for easy testing -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputPath>$(APPDATA)\Autodesk\Revit\Addins\2025\RectangularDuctSupport\</OutputPath>
+  </PropertyGroup>
+
+  <!-- Release: Output to bin folder for installer packaging -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Revit API references - do NOT copy to output -->
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2025\RevitAPIUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- NuGet packages for Excel and PDF generation -->
+    <PackageReference Include="ClosedXML" Version="0.102.2" />
+    <PackageReference Include="QuestPDF" Version="2024.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Embedded resources for localization -->
+    <EmbeddedResource Update="Localization\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Localization\Strings.ar.resx">
+      <DependentUpon>Strings.resx</DependentUpon>
+    </EmbeddedResource>
+    <Compile Update="Localization\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\*.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Revit Family files - copy to output Families folder -->
+    <None Include="Families\RfaFiles\*.rfa">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Families\%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
+  <!-- Post-build: copy .addin manifest -->
+  <Target Name="CopyAddinManifest" AfterTargets="Build">
+    <Copy SourceFiles="DuctSupportAddin.addin" 
+          DestinationFolder="$(APPDATA)\Autodesk\Revit\Addins\2025\" />
+  </Target>
+
+</Project>

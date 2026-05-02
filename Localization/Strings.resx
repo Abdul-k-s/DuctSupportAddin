@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter</value>
+  </resheader>
+  
+  <!-- Window Titles -->
+  <data name="WindowTitle" xml:space="preserve">
+    <value>Duct Support Placement</value>
+  </data>
+  <data name="PreviewWindowTitle" xml:space="preserve">
+    <value>Preview Supports</value>
+  </data>
+  
+  <!-- Section Headers -->
+  <data name="ScopeHeader" xml:space="preserve">
+    <value>Scope</value>
+  </data>
+  <data name="SpacingHeader" xml:space="preserve">
+    <value>Spacing Standard</value>
+  </data>
+  <data name="SupportTypesHeader" xml:space="preserve">
+    <value>Support Types</value>
+  </data>
+  <data name="FamiliesHeader" xml:space="preserve">
+    <value>Families</value>
+  </data>
+  <data name="CalculationsHeader" xml:space="preserve">
+    <value>Calculations</value>
+  </data>
+  <data name="ExportHeader" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="SettingsHeader" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  
+  <!-- Scope -->
+  <data name="EntireModel" xml:space="preserve">
+    <value>Entire Model</value>
+  </data>
+  <data name="ActiveView" xml:space="preserve">
+    <value>Active View</value>
+  </data>
+  <data name="Selection" xml:space="preserve">
+    <value>Selection</value>
+  </data>
+  <data name="Systems" xml:space="preserve">
+    <value>Systems:</value>
+  </data>
+  <data name="Supply" xml:space="preserve">
+    <value>Supply</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="Exhaust" xml:space="preserve">
+    <value>Exhaust</value>
+  </data>
+  <data name="SkipExisting" xml:space="preserve">
+    <value>Skip ducts with existing supports</value>
+  </data>
+  <data name="ConsiderInsulation" xml:space="preserve">
+    <value>Consider insulation thickness</value>
+  </data>
+  
+  <!-- Spacing -->
+  <data name="Standard" xml:space="preserve">
+    <value>Standard:</value>
+  </data>
+  <data name="Adjustment" xml:space="preserve">
+    <value>Adjustment (%):</value>
+  </data>
+  <data name="ActualSpacing" xml:space="preserve">
+    <value>Actual Spacing:</value>
+  </data>
+  
+  <!-- Support Types -->
+  <data name="HorizontalSupports" xml:space="preserve">
+    <value>Horizontal Duct Supports</value>
+  </data>
+  <data name="VerticalSupports" xml:space="preserve">
+    <value>Vertical Duct Supports</value>
+  </data>
+  <data name="PreferWallSupports" xml:space="preserve">
+    <value>Prefer Wall Supports When Near Wall</value>
+  </data>
+  <data name="WallProximity" xml:space="preserve">
+    <value>Wall Proximity:</value>
+  </data>
+  <data name="AlignWithStructure" xml:space="preserve">
+    <value>Align Supports with Structure (Beams)</value>
+  </data>
+  
+  <!-- Families -->
+  <data name="Ceiling" xml:space="preserve">
+    <value>Ceiling:</value>
+  </data>
+  <data name="Ground" xml:space="preserve">
+    <value>Ground:</value>
+  </data>
+  <data name="Wall" xml:space="preserve">
+    <value>Wall:</value>
+  </data>
+  <data name="Vertical" xml:space="preserve">
+    <value>Vertical:</value>
+  </data>
+  
+  <!-- Calculations -->
+  <data name="CalculateLoads" xml:space="preserve">
+    <value>Calculate structural loads</value>
+  </data>
+  <data name="RecommendRods" xml:space="preserve">
+    <value>Recommend rod sizes</value>
+  </data>
+  <data name="InsulationType" xml:space="preserve">
+    <value>Insulation type:</value>
+  </data>
+  
+  <!-- Export -->
+  <data name="ExportExcel" xml:space="preserve">
+    <value>Excel Schedule (.xlsx)</value>
+  </data>
+  <data name="ExportPdf" xml:space="preserve">
+    <value>PDF Summary Report</value>
+  </data>
+  <data name="TagSupports" xml:space="preserve">
+    <value>Tag Placed Supports</value>
+  </data>
+  <data name="OutputFolder" xml:space="preserve">
+    <value>Output Folder:</value>
+  </data>
+  
+  <!-- Settings -->
+  <data name="Theme" xml:space="preserve">
+    <value>Theme:</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  
+  <!-- Buttons -->
+  <data name="Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="PlaceSupports" xml:space="preserve">
+    <value>Place Supports</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  
+  <!-- Tooltips -->
+  <data name="SpacingTooltipTitle" xml:space="preserve">
+    <value>Spacing Adjustment</value>
+  </data>
+  <data name="SpacingTooltipContent" xml:space="preserve">
+    <value>Enter a percentage to adjust SMACNA spacing. 100 = Standard spacing, 50 = Half spacing (more supports), 200 = Double spacing (fewer supports)</value>
+  </data>
+  <data name="WallProximityTooltipTitle" xml:space="preserve">
+    <value>Wall Proximity Distance</value>
+  </data>
+  <data name="WallProximityTooltipContent" xml:space="preserve">
+    <value>Ducts within this distance from a wall will use wall-mounted supports instead of ceiling/ground supports.</value>
+  </data>
+  
+  <!-- Messages -->
+  <data name="PlacementComplete" xml:space="preserve">
+    <value>Placement Complete</value>
+  </data>
+  <data name="NoSupportsPlaced" xml:space="preserve">
+    <value>No supports were placed. Check that ducts exist and settings are correct.</value>
+  </data>
+  
+</root>

@@ -1,0 +1,175 @@
+<Window x:Class="DuctSupportAddin.UI.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Rectangular Duct Support"
+        Height="550" Width="550"
+        MinHeight="450" MinWidth="450"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                
+                <!-- Scope Section -->
+                <GroupBox Header="Scope">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <RadioButton Content="Entire Model" IsChecked="{Binding ScopeEntireModel}" Margin="0,0,15,0"/>
+                            <RadioButton Content="Active View" IsChecked="{Binding ScopeActiveView}" Margin="0,0,15,0"/>
+                            <RadioButton Content="Selection" IsChecked="{Binding ScopeSelection}"/>
+                        </StackPanel>
+                        
+                        <TextBlock Text="Systems:" Margin="0,0,0,5"/>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox Content="Supply" IsChecked="{Binding SystemSupply}" Margin="0,0,15,0"/>
+                            <CheckBox Content="Return" IsChecked="{Binding SystemReturn}" Margin="0,0,15,0"/>
+                            <CheckBox Content="Exhaust" IsChecked="{Binding SystemExhaust}"/>
+                        </StackPanel>
+                        
+                        <CheckBox Content="Skip ducts with existing supports" 
+                                  IsChecked="{Binding SkipExistingSupports}" 
+                                  Margin="0,10,0,0"/>
+                        
+                        <CheckBox Content="Consider insulation thickness" 
+                                  IsChecked="{Binding ConsiderInsulation}" 
+                                  Margin="0,5,0,0"/>
+                    </StackPanel>
+                </GroupBox>
+                
+                <!-- Spacing Section -->
+                <GroupBox Header="Spacing Standard">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Standard:" VerticalAlignment="Center"/>
+                        <ComboBox Grid.Row="0" Grid.Column="1" 
+                                  Width="180" 
+                                  ItemsSource="{Binding SpacingStandards}"
+                                  SelectedItem="{Binding SelectedSpacingStandard}"
+                                  DisplayMemberPath="DisplayName"/>
+                        
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Adjustment (%):" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="0,10,0,0">
+                            <TextBox Width="80" 
+                                     Text="{Binding SpacingAdjustmentPercent, UpdateSourceTrigger=PropertyChanged}"
+                                     ToolTipService.ShowDuration="10000">
+                                <TextBox.ToolTip>
+                                    <StackPanel MaxWidth="300">
+                                        <TextBlock FontWeight="Bold">Spacing Adjustment</TextBlock>
+                                        <TextBlock TextWrapping="Wrap">
+                                            Reduces spacing by this percentage.
+                                            Example: 20% adjustment with 3m spacing = 2.4m actual spacing
+                                        </TextBlock>
+                                    </StackPanel>
+                                </TextBox.ToolTip>
+                            </TextBox>
+                            <TextBlock Text="%" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                        </StackPanel>
+                        
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Actual Spacing:" VerticalAlignment="Center" Margin="0,10,0,0"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" 
+                                   Text="{Binding ActualSpacing}" 
+                                   FontWeight="SemiBold"
+                                   VerticalAlignment="Center" 
+                                   Margin="0,10,0,0"/>
+                    </Grid>
+                </GroupBox>
+                
+                <!-- Support Types Section -->
+                <GroupBox Header="Support Types">
+                    <StackPanel>
+                        <CheckBox Content="Horizontal Duct Supports" 
+                                  IsChecked="{Binding EnableHorizontalSupports}"
+                                  FontWeight="SemiBold"/>
+                        
+                        <StackPanel Margin="20,5,0,0" IsEnabled="{Binding EnableHorizontalSupports}">
+                            <CheckBox Content="Prefer Wall Supports When Near Wall" 
+                                      IsChecked="{Binding PreferWallSupports}"/>
+                            
+                            <StackPanel Orientation="Horizontal" Margin="20,5,0,0" 
+                                        IsEnabled="{Binding PreferWallSupports}">
+                                <TextBlock Text="Wall Proximity:" VerticalAlignment="Center"/>
+                                <TextBox Width="60" Text="{Binding WallProximityMm}" Margin="10,0,5,0"/>
+                                <TextBlock Text="mm" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        <CheckBox Content="Vertical Duct Supports" 
+                                  IsChecked="{Binding EnableVerticalSupports}"
+                                  FontWeight="SemiBold"
+                                  Margin="0,10,0,0"/>
+                    </StackPanel>
+                </GroupBox>
+                
+                <!-- Families Section -->
+                <GroupBox Header="Families">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Ceiling:" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding HorizontalCeilingSupportFamily}" Margin="0,0,5,5"/>
+                        <Button Grid.Row="0" Grid.Column="2" Content="..." Width="30" Command="{Binding BrowseCeilingFamilyCommand}" Margin="0,0,0,5"/>
+                        
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Ground:" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding HorizontalGroundSupportFamily}" Margin="0,0,5,5"/>
+                        <Button Grid.Row="1" Grid.Column="2" Content="..." Width="30" Command="{Binding BrowseGroundFamilyCommand}" Margin="0,0,0,5"/>
+                        
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Wall:" VerticalAlignment="Center" Margin="0,0,10,5"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding HorizontalWallSupportFamily}" Margin="0,0,5,5"/>
+                        <Button Grid.Row="2" Grid.Column="2" Content="..." Width="30" Command="{Binding BrowseWallFamilyCommand}" Margin="0,0,0,5"/>
+                        
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Vertical:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding VerticalWallSupportFamily}" Margin="0,0,5,0"/>
+                        <Button Grid.Row="3" Grid.Column="2" Content="..." Width="30" Command="{Binding BrowseVerticalFamilyCommand}"/>
+                    </Grid>
+                </GroupBox>
+                
+                <!-- Settings Section -->
+                <GroupBox Header="Settings">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Theme:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <ComboBox Width="120" 
+                                  ItemsSource="{Binding Themes}"
+                                  SelectedItem="{Binding SelectedTheme}"
+                                  DisplayMemberPath="DisplayName"/>
+                    </StackPanel>
+                </GroupBox>
+                
+            </StackPanel>
+        </ScrollViewer>
+        
+        <!-- Buttons -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button Content="Preview" Command="{Binding PreviewCommand}" Margin="0,0,10,0" Padding="16,8"/>
+            <Button Content="Place Supports" Command="{Binding PlaceSupportsCommand}" 
+                    Background="#0078D4" Foreground="White" Padding="16,8" Margin="0,0,10,0"/>
+            <Button Content="Cancel" Command="{Binding CancelCommand}" Padding="16,8"/>
+        </StackPanel>
+    </Grid>
+</Window>
