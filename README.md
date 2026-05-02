@@ -109,7 +109,9 @@ dotnet build -c Release
 4. Click **Preview** to see placements before committing
 5. Click **Place Supports** to execute
 
-[![Watch the video](https://img.youtube.com/vi/gCSaFxQd_FA/0.jpg)](https://youtu.be/gCSaFxQd_FA)
+## Demo Video
+
+[Watch demo video](https://youtu.be/gCSaFxQd_FA)
 
 ## Support Families
 
