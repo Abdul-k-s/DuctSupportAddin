@@ -109,6 +109,8 @@ dotnet build -c Release
 4. Click **Preview** to see placements before committing
 5. Click **Place Supports** to execute
 
+[![Watch the video](https://img.youtube.com/vi/gCSaFxQd_FA/0.jpg)](https://youtu.be/gCSaFxQd_FA)
+
 ## Support Families
 
 The add-in includes 5 support families:
@@ -131,9 +133,8 @@ The add-in includes 5 support families:
 | AS 4254 | Australia | 2.4m |
 
 Use the **Adjustment %** to modify spacing:
-- `50%` = Half spacing (more supports)
-- `100%` = Standard spacing
-- `200%` = Double spacing (fewer supports)
+- `0%` = Standard spacing
+- `50%` =  Half spacing (more supports) 
 
 ## Configuration
 
@@ -185,7 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-**Abdul Khaled Sultan**  
+**Abdullah Khaled Sultan**  
 Email: abdul.khaled.sultan@gmail.com
 
 ---
